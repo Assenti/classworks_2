@@ -8,7 +8,7 @@ vector<Pixel> Cactus::getBody()
 Cactus::Cactus()
 {
 	sign = 'F';
-	body.push_back(Pixel(48, 14));
+	body.push_back(Pixel(48, 13));
 	body.push_back(Pixel(48, 14));
 }
 
@@ -32,7 +32,7 @@ void Cactus::move()
 		}
 		else
 		{
-			body.push_back(Pixel(48, 14));
+			body.push_back(Pixel(48, 13));
 			body.push_back(Pixel(48, 14));
 		}
 		for (Pixel & pixel : body)

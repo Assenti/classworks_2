@@ -4,7 +4,7 @@
 Game::Game()
 {
 	width = 50, height = 50;
-	score = -1;
+	score = 0;
 }
 
 int Game::getScore()
@@ -51,14 +51,13 @@ void Game::play()
 			if (dino.isJumping)
 			{
 				dino.settle();
-				if (dino.getBody()[3].y >= 4)
+				if (!ifDinoSettles())
 				{
 					dino.isJumping = false;
 				}
 			}
 		}
 		isActive = !checkIfDinoCrushes();
-		
 		dino.draw();
 		ground.draw();
 		cactus.draw();
