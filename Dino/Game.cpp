@@ -3,6 +3,19 @@
 
 Game::Game()
 {
+	width = 50, height = 50;
+	score = -1;
+}
+
+int Game::getScore()
+{
+	return score;
+}
+
+Game & Game::getInstance()
+{
+	static Game instance;
+	return instance;
 }
 
 Game::~Game()
@@ -15,6 +28,7 @@ void Game::play()
 	while (isActive)
 	{
 		system("cls");
+		score += isSuccessJump();
 		cactus.move();
 		if (_kbhit())
 		{
@@ -37,13 +51,55 @@ void Game::play()
 			if (dino.isJumping)
 			{
 				dino.settle();
-				dino.isJumping = false;
+				if (dino.getBody()[3].y >= 4)
+				{
+					dino.isJumping = false;
+				}
 			}
 		}
+		isActive = !checkIfDinoCrushes();
+		
 		dino.draw();
 		ground.draw();
 		cactus.draw();
 		Sleep(200);
 	}
-	
+	system("cls");
+	Pixel::gotoXY(5, 5);
+	cout << "GAME OVER\tSCORE: " << score << endl;
+}
+
+bool Game::checkIfDinoCrushes()
+{
+	for (Pixel & p1 : dino.getBody())
+	{
+		for (Pixel & p2 : cactus.getBody())
+		{
+			if (p1 == p2)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool Game::ifDinoSettles()
+{
+	return dino.getBody()[3].y < (ground.getBody()[0].y - 1);
+}
+
+bool Game::isSuccessJump()
+{
+	for (Pixel & p1 : dino.getBody())
+	{
+		for (Pixel & p2 : cactus.getBody())
+		{
+			if (p1.x == p2.x && p1.y != p2.y)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
 }

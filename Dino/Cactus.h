@@ -5,9 +5,10 @@
 
 class Cactus
 {
-	vector<Pixel> cactus;
+	vector<Pixel> body;
 public:
 	char sign;
+	vector<Pixel> getBody();
 	Cactus();
 	~Cactus();
 	void move();

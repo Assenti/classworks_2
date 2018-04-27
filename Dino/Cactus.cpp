@@ -1,9 +1,15 @@
 #include "Cactus.h"
 
+vector<Pixel> Cactus::getBody()
+{
+	return body;
+}
+
 Cactus::Cactus()
 {
 	sign = 'F';
-	cactus.push_back(Pixel(20, 4));
+	body.push_back(Pixel(48, 14));
+	body.push_back(Pixel(48, 14));
 }
 
 Cactus::~Cactus()
@@ -12,13 +18,24 @@ Cactus::~Cactus()
 
 void Cactus::move()
 {
-	for (Pixel & pixel : cactus)
+	for (Pixel & pixel : body)
 	{
 		pixel.x--;
 	}
-	if (cactus[0].x < 1)
+	if (body[0].x < 1)
 	{
-		for (Pixel & pixel : cactus)
+		int size = rand() % 2;
+		body.clear();
+		if (size == 1)
+		{
+			body.push_back(Pixel(48, 14));
+		}
+		else
+		{
+			body.push_back(Pixel(48, 14));
+			body.push_back(Pixel(48, 14));
+		}
+		for (Pixel & pixel : body)
 		{
 			pixel.x = 20;
 		}
@@ -27,7 +44,7 @@ void Cactus::move()
 
 void Cactus::draw()
 {
-	for (Pixel pixel : cactus)
+	for (Pixel pixel : body)
 	{
 		pixel.draw(sign);
 	}

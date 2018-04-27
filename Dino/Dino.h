@@ -9,7 +9,9 @@ private:
 	char sign;
 	vector<Pixel> body;
 public:
+	char getSign();
 	bool isJumping;
+	vector<Pixel> getBody();
 	Dino();
 	~Dino();
 	void draw();

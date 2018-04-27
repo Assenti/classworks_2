@@ -1,15 +1,24 @@
 #include "Dino.h"
 
+char Dino::getSign()
+{
+	return sign;
+}
+
+vector<Pixel> Dino::getBody()
+{
+	return body;
+}
+
 Dino::Dino()
 {
 	isJumping = false;
 	sign = '#';
-	body.push_back(Pixel(3, 3));
-	body.push_back(Pixel(3, 4));
-	body.push_back(Pixel(4, 3));
-	body.push_back(Pixel(4, 4));
+	body.push_back(Pixel(10, 13));
+	body.push_back(Pixel(10, 14));
+	body.push_back(Pixel(11, 13));
+	body.push_back(Pixel(11, 14));
 }
-
 
 Dino::~Dino()
 {
@@ -25,9 +34,21 @@ void Dino::draw()
 
 void Dino::jump()
 {
+	bool gotCeiling = false;
 	for (Pixel & pixel : body)
 	{
-		pixel.y--;
+		if (pixel.y < 8)
+		{
+			gotCeiling = true;
+		}
+		
+	}
+	if (!gotCeiling)
+	{
+		for (Pixel & pixel : body)
+		{
+			pixel.y--;
+		}
 	}
 }
 

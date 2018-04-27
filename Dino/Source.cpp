@@ -1,8 +1,10 @@
 #include "Game.h"
 
+using namespace std;
+
 int main()
 {
-	Game game;
+	Game & game = Game::getInstance();
 	game.play();
 
 
