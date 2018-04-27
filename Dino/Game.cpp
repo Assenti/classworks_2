@@ -12,7 +12,7 @@ Game::~Game()
 void Game::play()
 {
 	isActive = true;
-	while (true)
+	while (isActive)
 	{
 		system("cls");
 		cactus.move();
@@ -24,6 +24,7 @@ void Game::play()
 			case 'w':
 				dino.jump();
 				dino.isJumping = true;
+				break;
 			case 'q':
 				isActive = false;
 				break;
@@ -39,9 +40,9 @@ void Game::play()
 				dino.isJumping = false;
 			}
 		}
+		dino.draw();
 		ground.draw();
 		cactus.draw();
-		dino.draw();
 		Sleep(200);
 	}
 	

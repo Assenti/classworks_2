@@ -2,7 +2,6 @@
 #include "Dino.h"
 #include "Cactus.h"
 #include "Ground.h"
-#include "Pixel.h"
 
 class Game
 {

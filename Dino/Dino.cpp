@@ -3,7 +3,7 @@
 Dino::Dino()
 {
 	isJumping = false;
-	sign = '*';
+	sign = '#';
 	body.push_back(Pixel(3, 3));
 	body.push_back(Pixel(3, 4));
 	body.push_back(Pixel(4, 3));
