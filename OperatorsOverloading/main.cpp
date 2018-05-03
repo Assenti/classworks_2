@@ -2,7 +2,6 @@
 #include "Progression.h"
 using namespace std;
 
-
 Progression operator +(Progression & a, Progression & b)
 {
 	Progression c;
@@ -10,7 +9,6 @@ Progression operator +(Progression & a, Progression & b)
 	c.setD(a.getD() + b.getD());
 	return c;
 }
-
 
 int main()
 {
