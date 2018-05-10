@@ -2,7 +2,7 @@
 #include "Dino.h"
 #include "Cactus.h"
 #include "Ground.h"
-#include "Pixel.h"
+#include "Pixels.h"
 class Game
 {
 private:

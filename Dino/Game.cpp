@@ -64,15 +64,15 @@ void Game::play()
 		Sleep(200);
 	}
 	system("cls");
-	Pixel::gotoXY(5, 5);
+	Pixels::gotoXY(5, 5);
 	cout << "GAME OVER\tSCORE: " << score << endl;
 }
 
 bool Game::checkIfDinoCrushes()
 {
-	for (Pixel & p1 : dino.getBody())
+	for (Pixels & p1 : dino.getBody())
 	{
-		for (Pixel & p2 : cactus.getBody())
+		for (Pixels & p2 : cactus.getBody())
 		{
 			if (p1 == p2)
 			{
@@ -90,9 +90,9 @@ bool Game::ifDinoSettles()
 
 bool Game::isSuccessJump()
 {
-	for (Pixel & p1 : dino.getBody())
+	for (Pixels & p1 : dino.getBody())
 	{
-		for (Pixel & p2 : cactus.getBody())
+		for (Pixels & p2 : cactus.getBody())
 		{
 			if (p1.x == p2.x && p1.y != p2.y)
 			{

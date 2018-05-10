@@ -1,14 +1,14 @@
 #pragma once
-#include "Pixel.h"
+#include "Pixels.h"
 #include <vector>
 using namespace std;
 
 class Ground
 {
 	char sign;
-	vector <Pixel> body;
+	vector <Pixels> body;
 public:
-	vector <Pixel> getBody();
+	vector <Pixels> getBody();
 	Ground();
 	~Ground();
 	void draw();

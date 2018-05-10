@@ -1,17 +1,17 @@
 #pragma once
 #include <vector>
-#include "Pixel.h"
+#include "Pixels.h"
 using namespace std;
 
 class Dino
 {
 private:
 	char sign;
-	vector<Pixel> body;
+	vector<Pixels> body;
 public:
 	char getSign();
 	bool isJumping;
-	vector<Pixel> getBody();
+	vector<Pixels> getBody();
 	Dino();
 	~Dino();
 	void draw();

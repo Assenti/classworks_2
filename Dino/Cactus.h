@@ -1,14 +1,14 @@
 #pragma once
-#include "Pixel.h"
+#include "Pixels.h"
 #include <vector>
-
+using namespace std;
 
 class Cactus
 {
-	vector<Pixel> body;
+	vector<Pixels> body;
 public:
 	char sign;
-	vector<Pixel> getBody();
+	vector<Pixels> getBody();
 	Cactus();
 	~Cactus();
 	void move();

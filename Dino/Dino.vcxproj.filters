@@ -30,7 +30,7 @@
     <ClCompile Include="Cactus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pixel.cpp">
+    <ClCompile Include="Pixels.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClInclude Include="Cactus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Pixel.h">
+    <ClInclude Include="Pixels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

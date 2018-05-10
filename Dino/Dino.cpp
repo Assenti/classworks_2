@@ -5,7 +5,7 @@ char Dino::getSign()
 	return sign;
 }
 
-vector<Pixel> Dino::getBody()
+vector<Pixels> Dino::getBody()
 {
 	return body;
 }
@@ -14,10 +14,10 @@ Dino::Dino()
 {
 	isJumping = false;
 	sign = '#';
-	body.push_back(Pixel(10, 13));
-	body.push_back(Pixel(10, 14));
-	body.push_back(Pixel(11, 13));
-	body.push_back(Pixel(11, 14));
+	body.push_back(Pixels(10, 13));
+	body.push_back(Pixels(10, 14));
+	body.push_back(Pixels(11, 13));
+	body.push_back(Pixels(11, 14));
 }
 
 Dino::~Dino()
@@ -26,7 +26,7 @@ Dino::~Dino()
 
 void Dino::draw()
 {
-	for (Pixel pixel : body)
+	for (Pixels pixel : body)
 	{
 		pixel.draw(sign);
 	}
@@ -35,7 +35,7 @@ void Dino::draw()
 void Dino::jump()
 {
 	bool gotCeiling = false;
-	for (Pixel & pixel : body)
+	for (Pixels & pixel : body)
 	{
 		if (pixel.y < 8)
 		{
@@ -45,7 +45,7 @@ void Dino::jump()
 	}
 	if (!gotCeiling)
 	{
-		for (Pixel & pixel : body)
+		for (Pixels & pixel : body)
 		{
 			pixel.y--;
 		}
@@ -54,7 +54,7 @@ void Dino::jump()
 
 void Dino::settle()
 {
-	for (Pixel & pixel : body)
+	for (Pixels & pixel : body)
 	{
 		pixel.y++;
 	}
