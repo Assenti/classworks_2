@@ -50,9 +50,7 @@ bool isInRadius(T ... points)
 
 int main()
 {
-	//Pixel one(2, 4);
-	//Pixel two(3, 3);
-	//Pixel three(6, 6);
+
 	std::cout << isInRadius(Pixel{ 2,4 }, Pixel{ 3,3 }, Pixel{ 6,6 }) << std::endl;
 
 	//print(1, '2', "class", 4.5, 110L);
