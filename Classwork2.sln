@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Classwork2", "Classwork2\Classwork2.vcxproj", "{DBCF7ED0-2BF1-40DB-A42E-867F879E69A0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OperatorsOverloadingAgain", "Classwork2\Classwork2.vcxproj", "{DBCF7ED0-2BF1-40DB-A42E-867F879E69A0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dino", "Dino\Dino.vcxproj", "{EE2F3B50-AF90-434D-BDDD-E057CAB518F3}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OperatorsOverloading", "OperatorsOverloading\OperatorsOverloading.vcxproj", "{8438E844-5F4C-4646-922C-DD39015A425E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MoveConstructor", "MoveConstructor\MoveConstructor.vcxproj", "{0AEC5E62-5186-4077-BE00-0961A439418B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TemplatesOOP", "TemplatesOOP\TemplatesOOP.vcxproj", "{064A88A5-EBC8-4BD2-AF90-13350CBE8AA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,14 @@ Global
 		{0AEC5E62-5186-4077-BE00-0961A439418B}.Release|x64.Build.0 = Release|x64
 		{0AEC5E62-5186-4077-BE00-0961A439418B}.Release|x86.ActiveCfg = Release|Win32
 		{0AEC5E62-5186-4077-BE00-0961A439418B}.Release|x86.Build.0 = Release|Win32
+		{064A88A5-EBC8-4BD2-AF90-13350CBE8AA7}.Debug|x64.ActiveCfg = Debug|x64
+		{064A88A5-EBC8-4BD2-AF90-13350CBE8AA7}.Debug|x64.Build.0 = Debug|x64
+		{064A88A5-EBC8-4BD2-AF90-13350CBE8AA7}.Debug|x86.ActiveCfg = Debug|Win32
+		{064A88A5-EBC8-4BD2-AF90-13350CBE8AA7}.Debug|x86.Build.0 = Debug|Win32
+		{064A88A5-EBC8-4BD2-AF90-13350CBE8AA7}.Release|x64.ActiveCfg = Release|x64
+		{064A88A5-EBC8-4BD2-AF90-13350CBE8AA7}.Release|x64.Build.0 = Release|x64
+		{064A88A5-EBC8-4BD2-AF90-13350CBE8AA7}.Release|x86.ActiveCfg = Release|Win32
+		{064A88A5-EBC8-4BD2-AF90-13350CBE8AA7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
