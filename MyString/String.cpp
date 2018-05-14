@@ -15,13 +15,14 @@ void String::operator+=(const char ch)
 	symbols[size] = ch;
 }
 
-void String::operator+=(const char* other)
+void String::operator+=(const String other)
 {
 	int work_size = size + other.length();
 	size += other.length();
-	for (int i = size; i < work_size; i++)
+	for (int i = size, j = 0; i < work_size; i++)
 	{
-		symbols[i] = other[i];
+		symbols[i] = other[j];
+		j++;
 	}
 }
 

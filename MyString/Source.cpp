@@ -3,8 +3,11 @@
 
 int main()
 {
-	String str("sample");
+	String str("first");
+	String str2("second");
 
+	str += str2;
+	std::cout << str << std::endl;
 
 
 	system("pause");
