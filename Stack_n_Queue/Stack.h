@@ -6,8 +6,12 @@ class Stack
 {
 private:
 	T * data;
-public:
 	size_t size;
+public:
+	size_t getSize()
+	{
+		return size;
+	}
 	T & getData()
 	{
 		return &data;
@@ -35,20 +39,26 @@ public:
 		}
 	}
 
-	T & pop_back()
+	T pop_back()
 	{
+		auto temple = data[size - 1];
 		if (nullptr != data)
 		{
 			data = (T*)realloc(data, --size * sizeof(T));
 		}
-		return & data[size - 1];
+		return temple;
 	}
 
-	T & peek()
+	T peek()
 	{
-		return &data[size - 1];
+		return data[size - 1];
 	}
 
+
+	T & operator [](const int & pos)
+	{
+		return data[pos];
+	}
 
 	~Stack()
 	{

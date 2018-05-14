@@ -6,8 +6,12 @@ class Queue
 {
 private:
 	T * data;
-public:
 	size_t size;
+public:
+	size_t getSize()
+	{
+		return size;
+	}
 	T & getData()
 	{
 		return &data;
@@ -34,13 +38,15 @@ public:
 		}
 	}
 
-	void enQueue(const T & elem)
+	T enQueue(const T & elem)
 	{
+		return data[0];
 		push_back(elem);
 	}
 
-	void deQueue(const T & elem)
+	T deQueue()
 	{
+		return data[0];
 		T * data_temple = new T[size - 1];
 		for (int i = 1, j = 0; i < size; i++)
 		{
@@ -49,6 +55,11 @@ public:
 		}
 		size--;
 		data = data_temple;
+	}
+
+	T & operator [](const int & pos)
+	{
+		return data[pos];
 	}
 
 	~Queue()
