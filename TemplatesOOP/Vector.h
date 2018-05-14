@@ -39,29 +39,27 @@ public:
 			data = (T*)realloc(data, --size * sizeof(T));
 		}
 	}
-	T * begin()
-	{
-		return data[0];
-	}
-	T * end()
-	{
-		return data[size - 1];
-	}
+
 	size_t count() const
 	{
 		return size;
 	}
-	void erase(const T & _element)
+
+	void erase(const int index)
 	{
-		for (auto & element : data)
+		T * data_temple = new T[size - 1];
+		for (int i = 0, j = 0; i < size; i++)
 		{
-			if (element == _element)
+			if (i != index)
 			{
-				
-				data = (T*)realloc(data, --size * sizeof(T));
+				data_temple[j] = data[i];
+				j++;
 			}
 		}
+		size--;
+		data = data_temple;
 	}
+
 	T & operator [](const int & pos)
 	{
 		return data[pos];

@@ -55,8 +55,15 @@ int main()
 	Vector<int> a(std::initializer_list<int>{1, 2, 3, 4});
 	a.push_back(5);
 	a.push_back(6);
-	std::cout << a.count() << std::endl;
-	
+	//std::cout << a.count() << std::endl;
+	a.erase(1);
+
+	for (int i = 0; i < a.count(); i++)
+	{
+		std::cout << a[i] << std::endl;
+	}
+
+
 
 	system("pause");
 	return 0;
