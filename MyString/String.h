@@ -12,7 +12,7 @@ public:
 	String(const char*);
 	size_t size;
 	void operator +=(const char);
-	String operator +(const String);
+	void operator +(const String);
 	friend std::ostream & operator <<(std::ostream &, String &);
 	friend std::istream & operator >> (String &, std::istream &);
 	size_t length() const;

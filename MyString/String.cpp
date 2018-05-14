@@ -22,18 +22,15 @@ void String::operator+=(const char ch)
 	symbols[size-1] = ch;
 }
 
-String String::operator+(const String other)
+void String::operator+(const String other)
 {
 	int work_size = size + other.length();
-	String merged_str = new char[work_size];
 	size += other.length();
 	for (int i = size, j = 0; i < work_size; i++)
 	{
 		symbols[i] = other.symbols[j];
 		j++;
 	}
-	merged_str = symbols;
-	return merged_str;
 }
 
 size_t String::length() const
@@ -48,7 +45,6 @@ char String::operator[](int pos)
 
 String::~String()
 {
-	delete[] symbols;
 }
 
 std::ostream & operator<<(std::ostream & os, String & s)
