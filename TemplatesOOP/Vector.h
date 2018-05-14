@@ -60,6 +60,16 @@ public:
 		data = data_temple;
 	}
 
+	T * begin()
+	{
+		return & data[0];
+	}
+
+	T * end()
+	{
+		return & data[size - 1];
+	}
+
 	T & operator [](const int & pos)
 	{
 		return data[pos];

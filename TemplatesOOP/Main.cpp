@@ -45,10 +45,8 @@
 //	return false;
 //}
 
-
 int main()
 {
-
 	//std::cout << isInRadius(Pixel{ 2,4 }, Pixel{ 3,3 }, Pixel{ 6,6 }) << std::endl;
 	//print(1, '2', "class", 4.5, 110L);
 
@@ -58,9 +56,9 @@ int main()
 	//std::cout << a.count() << std::endl;
 	a.erase(1);
 
-	for (int i = 0; i < a.count(); i++)
+	for (auto i : a)
 	{
-		std::cout << a[i] << std::endl;
+		std::cout << i << std::endl;
 	}
 
 
