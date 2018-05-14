@@ -54,10 +54,19 @@ public:
 		return data[size - 1];
 	}
 
-
-	T & operator [](const int & pos)
+	void operator += (const T & elem)
 	{
-		return data[pos];
+		push_back(elem);
+	}
+
+	void operator -- (int)
+	{
+		pop_back();
+	}
+
+	T operator [](int index)
+	{
+		peek();
 	}
 
 	~Stack()

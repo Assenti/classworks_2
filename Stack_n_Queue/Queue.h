@@ -57,9 +57,14 @@ public:
 		data = data_temple;
 	}
 
-	T & operator [](const int & pos)
+	void operator += (const T & elem)
 	{
-		return data[pos];
+		push_back(elem);
+	}
+
+	void operator --(int)
+	{
+		deQueue();
 	}
 
 	~Queue()
