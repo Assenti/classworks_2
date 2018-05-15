@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OperatorsOverloadingAgain", "Classwork2\Classwork2.vcxproj", "{DBCF7ED0-2BF1-40DB-A42E-867F879E69A0}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyString", "MyString\MyString.vcxproj", "{B85A3B59-9A8A-443E-B776-05CB099E6566}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack_n_Queue", "Stack_n_Queue\Stack_n_Queue.vcxproj", "{788BBC6A-9CED-44C3-A769-44AE5226089C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList", "LinkedList\LinkedList.vcxproj", "{DC3B5D71-8E80-444B-A64D-1CCB530E5B1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,8 +83,19 @@ Global
 		{788BBC6A-9CED-44C3-A769-44AE5226089C}.Release|x64.Build.0 = Release|x64
 		{788BBC6A-9CED-44C3-A769-44AE5226089C}.Release|x86.ActiveCfg = Release|Win32
 		{788BBC6A-9CED-44C3-A769-44AE5226089C}.Release|x86.Build.0 = Release|Win32
+		{DC3B5D71-8E80-444B-A64D-1CCB530E5B1D}.Debug|x64.ActiveCfg = Debug|x64
+		{DC3B5D71-8E80-444B-A64D-1CCB530E5B1D}.Debug|x64.Build.0 = Debug|x64
+		{DC3B5D71-8E80-444B-A64D-1CCB530E5B1D}.Debug|x86.ActiveCfg = Debug|Win32
+		{DC3B5D71-8E80-444B-A64D-1CCB530E5B1D}.Debug|x86.Build.0 = Debug|Win32
+		{DC3B5D71-8E80-444B-A64D-1CCB530E5B1D}.Release|x64.ActiveCfg = Release|x64
+		{DC3B5D71-8E80-444B-A64D-1CCB530E5B1D}.Release|x64.Build.0 = Release|x64
+		{DC3B5D71-8E80-444B-A64D-1CCB530E5B1D}.Release|x86.ActiveCfg = Release|Win32
+		{DC3B5D71-8E80-444B-A64D-1CCB530E5B1D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4265065-642F-4FAA-A82C-1B39BD60BD85}
 	EndGlobalSection
 EndGlobal

@@ -6,67 +6,59 @@ class Stack
 {
 private:
 	T * data;
-	size_t size;
+	size_t size, top;
 public:
+	Stack()
+	{
+		size = 1, top = 0;
+		data = new T[size];
+		data[0] = 0;
+	}
+
 	size_t getSize()
 	{
 		return size;
 	}
-	T & getData()
+
+	size_t getTop()
 	{
-		return &data;
+		return top;
 	}
 
-	Stack(std::initializer_list<T> elems) 
+	void push(const T & elem)
 	{
-		for (T elem : elems)
+		if (top + 1 >= size)
 		{
-			push_back(elem);
-		}
-	}
-
-	void push_back(const T & elem)
-	{
-		if (nullptr == data)
-		{
-			data = new T[++size];
-			data[0] = elem;
-		}
-		else
-		{
+			size *= 2;
 			data = (T*)realloc(data, ++size * sizeof(T));
-			data[size - 1] = elem;
+			
 		}
+		data[++top] = elem;
 	}
 
-	T pop_back()
+	T pop()
 	{
-		auto temple = data[size - 1];
-		if (nullptr != data)
-		{
-			data = (T*)realloc(data, --size * sizeof(T));
-		}
-		return temple;
+		return data[top--];
 	}
 
 	T peek()
 	{
-		return data[size - 1];
+		return data[top];
 	}
 
 	void operator += (const T & elem)
 	{
-		push_back(elem);
+		push(elem);
 	}
 
 	void operator -- (int)
 	{
-		pop_back();
+		pop();
 	}
 
-	T operator [](int index)
+	T operator [](int index) const
 	{
-		peek();
+		return data[index];
 	}
 
 	~Stack()
