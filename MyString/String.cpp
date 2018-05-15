@@ -24,9 +24,10 @@ void String::operator+=(const char ch)
 
 void String::operator+(const String other)
 {
-	int work_size = size + other.length();
+	int start = size;
+	int end = size + other.length();
 	size += other.length();
-	for (int i = size, j = 0; i < work_size; i++)
+	for (int i = start, j = 0; i < end; i++)
 	{
 		symbols[i] = other.symbols[j];
 		j++;

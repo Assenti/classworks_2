@@ -6,11 +6,12 @@
 
 class String
 {
-public:
+private:
+	size_t size;
 	char * symbols;
+public:
 	String();
 	String(const char*);
-	size_t size;
 	void operator +=(const char);
 	void operator +(const String);
 	friend std::ostream & operator <<(std::ostream &, String &);
