@@ -4,6 +4,8 @@
 template<class T>
 class LinkedList
 {
+private:
+	int counter = 0;
 public:
 	template<class T>
 	class Element
@@ -28,6 +30,7 @@ public:
 	LinkedList()
 	{
 		head = nullptr;
+		++counter;
 	}
 	void addToTail(const T & value)
 	{
@@ -37,18 +40,19 @@ public:
 		}
 		else
 		{
-			Element<T> * temp = head->next;
-			while (temp != nullptr)
+			Element<T> * temp = head;
+			while (temp->next != nullptr)
 			{
 				temp = temp->next;
 			}
+			temp->next = new Element<T>(value);
 		}
 	}
 	void deleteByValue(const T & value)
 	{
 		if (head != nullptr)
 		{
-			ElementOfLinkedList<T> * temp = head;
+			Element<T> * temp = head;
 			if (head->value == value)
 			{
 				head = head->next;
@@ -65,6 +69,46 @@ public:
 				}
 			}
 		}
+	}
+
+	T & operator[](const int index) const
+	{
+		int i = 0;
+		Element<T> * temp = head;
+		while (temp != nullptr)
+		{
+			if (index == i)
+			{
+				return temp->value;
+			}
+			temp = temp->next;
+			i++;
+		}
+	}
+
+	void swap(int first, int second)
+	{
+		Element<T> * temp = head;
+		Element<T> * helper = temp[first];
+		temp[first]->value = temp[second];
+		temp[second] = helper;
+	}
+
+	T * result(const int wanted_value) const
+	{
+		T * out = new T[counter];
+		int i = 0;
+		Element<T> * temp = head;
+		while (temp != nullptr)
+		{
+			if (wanted_value == temp->next->value)
+			{
+				out[i] = temp->value;
+			}
+			temp = temp->next;
+			i++;
+		}
+		return out;
 	}
 
 	friend std::ostream & operator << (std::ostream & stream, LinkedList<T> & list)
