@@ -148,7 +148,17 @@ public:
 	}
 	void insert(const T & value, const size_t index)
 	{
-
+		Element<T> * temp = head;
+		Element<T> * spacer = nullptr, * helper = nullptr;
+		size_t comparing_index = index - 1;
+		while (comparing_index > 0)
+		{
+			temp = temp->next;
+			comparing_index--;
+		}
+		spacer = temp->next;
+		spacer->next = temp->next->next;
+		spacer->value = value;
 	}
 	//return number of replacements or -1
 	int replace(const T & origin_value, const T & replacement_value)

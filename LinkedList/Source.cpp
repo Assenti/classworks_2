@@ -13,6 +13,8 @@ int main()
 
 	//l.deleteAll();
 	std::cout << l.replace(9, 8) << std::endl;
+	
+	l.insert(8, 1);
 	l.show();
 	/*std::cout << l[0] << std::endl;
 	auto result = l.searchByValue(5);
