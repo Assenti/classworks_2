@@ -11,7 +11,7 @@ int main()
 	l.addToHead(3);
 	l.addToTail(5);
 
-	std::cout << l.deleteByIndex(0) << std::endl;
+	l.deleteByIndex(2);
 	std::cout << l << std::endl;
 	/*std::cout << l[0] << std::endl;
 	auto result = l.searchByValue(5);

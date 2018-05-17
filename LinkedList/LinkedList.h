@@ -99,23 +99,23 @@ public:
 			}
 		}
 	}
-	//return index or NULL
-	size_t deleteByIndex(const size_t & index)
+	void deleteByIndex(const size_t & index)
 	{
-		size_t iterator = index, result = NULL;
 		Element<T> * temp = head;
-		while (iterator > 0)
+		size_t comparing_index = index - 1;
+		if (comparing_index == -1)
 		{
-			if (iterator == index)
-			{
-				temp = temp->next->next;
-				result = iterator;
-				break;
-			}
-			temp = temp->next;
-			iterator--;
+			head = head->next;
 		}
-		return result;
+		else
+		{
+			while (comparing_index > 0)
+			{
+				temp = temp->next;
+				comparing_index--;
+			}
+			temp->next = temp->next->next;
+		}
 	}
 	void deleteFromHead(){}
 	void deleteFromTail() {}
