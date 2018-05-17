@@ -11,8 +11,9 @@ int main()
 	l.addToHead(3);
 	l.addToTail(5);
 
-	l.deleteByIndex(2);
-	std::cout << l << std::endl;
+	//l.deleteAll();
+	std::cout << l.replace(9, 8) << std::endl;
+	l.show();
 	/*std::cout << l[0] << std::endl;
 	auto result = l.searchByValue(5);
 	for (auto i : result)

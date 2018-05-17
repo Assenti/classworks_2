@@ -1,5 +1,5 @@
 #pragma once
-#include <ostream>
+#include <iostream>
 #include <vector>
 
 template<class T>
@@ -117,15 +117,44 @@ public:
 			temp->next = temp->next->next;
 		}
 	}
-	void deleteFromHead(){}
-	void deleteFromTail() {}
-	void deleteAll(){}
-	void show(){}
-	void insert(const T & value, const size_t index) {}
-	//return number of replacements or -1
-	size_t replace(const T & origin_value, const T & replacement_value)
+	void deleteFromHead()
 	{
-		int counter = -1;
+		head = head->next;
+	}
+	void deleteFromTail() 
+	{
+		Element<T> * temp = head;
+		while (temp->next->next != nullptr)
+		{
+			temp = temp->next;
+		}
+		temp->next = nullptr;
+	}
+	void deleteAll()
+	{
+		head = nullptr;
+	}
+	void show()
+	{
+		if (head != nullptr)
+		{
+			Element<T> * temp = head;
+			while (temp != nullptr)
+			{
+				std::cout << temp->value << std::endl;
+				temp = temp->next;
+			}
+		}
+	}
+	void insert(const T & value, const size_t index)
+	{
+
+	}
+	//return number of replacements or -1
+	int replace(const T & origin_value, const T & replacement_value)
+	{
+		int counter = 0;
+		bool no_match = true;
 		size_t i = 0;
 		for (
 			Element<T> * temp = head;
@@ -136,12 +165,19 @@ public:
 			{
 				temp->value = replacement_value;
 				counter++;
+				no_match = false;
 			}
 			++i;
 		}
-		return counter;
+		if (no_match)
+			return -1;
+		else
+			return counter;
 	}
-	void reverse(){}
+	void reverse()
+	{
+
+	}
 	std::vector<size_t> searchByValue(const T & value) const
 	{
 		std::vector<size_t> result;
