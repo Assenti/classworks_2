@@ -5,8 +5,6 @@
 template<class T>
 class LinkedList
 {
-private:
-	int counter = 0;
 public:
 	template<class T>
 	class Element
@@ -31,7 +29,6 @@ public:
 	LinkedList()
 	{
 		head = nullptr;
-		++counter;
 	}
 	void addToTail(const T & value)
 	{
@@ -102,6 +99,49 @@ public:
 			}
 		}
 	}
+	//return index or NULL
+	size_t deleteByIndex(const size_t & index)
+	{
+		size_t iterator = index, result = NULL;
+		Element<T> * temp = head;
+		while (iterator > 0)
+		{
+			if (iterator == index)
+			{
+				temp = temp->next->next;
+				result = iterator;
+				break;
+			}
+			temp = temp->next;
+			iterator--;
+		}
+		return result;
+	}
+	void deleteFromHead(){}
+	void deleteFromTail() {}
+	void deleteAll(){}
+	void show(){}
+	void insert(const T & value, const size_t index) {}
+	//return number of replacements or -1
+	size_t replace(const T & origin_value, const T & replacement_value)
+	{
+		int counter = -1;
+		size_t i = 0;
+		for (
+			Element<T> * temp = head;
+			temp != nullptr;
+			temp = temp->next)
+		{
+			if (temp->value == origin_value)
+			{
+				temp->value = replacement_value;
+				counter++;
+			}
+			++i;
+		}
+		return counter;
+	}
+	void reverse(){}
 	std::vector<size_t> searchByValue(const T & value) const
 	{
 		std::vector<size_t> result;
@@ -133,7 +173,6 @@ public:
 			i++;
 		}
 	}
-
 	friend std::ostream & operator << (std::ostream & stream, LinkedList<T> & list)
 	{
 		if (list.head != nullptr)
@@ -147,11 +186,9 @@ public:
 		}
 		return stream;
 	}
-
 	~LinkedList()
 	{
 		delete head;
 	}
-	
 };
 
