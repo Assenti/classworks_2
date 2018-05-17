@@ -7,12 +7,16 @@ int main()
 	l.addToTail(5);
 	l.addToTail(6);
 	l.addToTail(7);
-	std::cout << l[2] << std::endl;
-	l.swap(0, 2);
-	std::cout << l[2] << std::endl;
-	
-	std::cout << l.result(5) << std::endl;
-	
+	l.addToHead(4); 
+	l.addToHead(3);
+	l.addToTail(5);
+
+	std::cout << l << std::endl;
+	std::cout << l[0] << std::endl;
+	auto result = l.searchByValue(5);
+	for (auto i : result)
+		std::cout << i << ' ';
+	std::cout << std::endl;
 
 	system("pause");
 	return 0;

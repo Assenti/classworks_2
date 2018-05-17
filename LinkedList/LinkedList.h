@@ -1,5 +1,6 @@
 #pragma once
-#include <iostream>
+#include <ostream>
+#include <vector>
 
 template<class T>
 class LinkedList
@@ -48,6 +49,37 @@ public:
 			temp->next = new Element<T>(value);
 		}
 	}
+	void addToHead(const T & value)
+	{
+		if (head == nullptr)
+		{
+			head = new Element<T>(value);
+		}
+		else
+		{
+			Element<T> * temp = head;
+			Element<T> * futureHead = new Element<T>(value);
+			head = futureHead;
+			head->next = temp;
+		}
+	}
+	void swap(size_t & first, size_t & second)
+	{
+		Element<T> * first_temp = head, *second_temp = head;
+		while (first > 0)
+		{
+			first_temp = first_temp->next;
+			first--;
+		}
+		while (second > 0)
+		{
+			second_temp = second_temp->next;
+			second--;
+		}
+		T temp = first_temp->value;
+		first_temp->value = second_temp->value;
+		second_temp->value = temp;
+	}
 	void deleteByValue(const T & value)
 	{
 		if (head != nullptr)
@@ -70,7 +102,23 @@ public:
 			}
 		}
 	}
-
+	std::vector<size_t> searchByValue(const T & value) const
+	{
+		std::vector<size_t> result;
+		size_t i = 0;
+		for (
+			Element<T> * temp = head;
+			temp != nullptr;
+			temp = temp->next)
+		{
+			if (temp->value == value)
+			{
+				result.push_back(i);
+			}
+			++i;
+		}
+		return result;
+	}
 	T & operator[](const int index) const
 	{
 		int i = 0;
@@ -86,36 +134,11 @@ public:
 		}
 	}
 
-	void swap(int first, int second)
-	{
-		Element<T> * temp = head;
-		Element<T> * helper = temp[first];
-		temp[first]->value = temp[second];
-		temp[second] = helper;
-	}
-
-	T * result(const int wanted_value) const
-	{
-		T * out = new T[counter];
-		int i = 0;
-		Element<T> * temp = head;
-		while (temp != nullptr)
-		{
-			if (wanted_value == temp->next->value)
-			{
-				out[i] = temp->value;
-			}
-			temp = temp->next;
-			i++;
-		}
-		return out;
-	}
-
 	friend std::ostream & operator << (std::ostream & stream, LinkedList<T> & list)
 	{
 		if (list.head != nullptr)
 		{
-			ElementOfLinkedList<type> * temp = list.head;
+			Element<T> * temp = list.head;
 			while (temp != nullptr)
 			{
 				stream << temp->value << std::endl;
