@@ -1,4 +1,6 @@
 #pragma once
+#include <ostream>
+
 
 template<class T>
 class DoubleLinkedList
@@ -17,10 +19,6 @@ public:
 		}
 		~Element()
 		{
-			if (next != nullptr)
-			{
-				delete next;
-			}
 		}
 	};
 	Element<T> * head, * tail;
@@ -28,53 +26,76 @@ public:
 	{
 		head = tail = nullptr;
 	}
+
+	
 	void addToTail(const T & value)
 	{
 		if (head == nullptr)
 		{
-			head = new Element<T>(value);
-			tail = head->next;
+			head = tail = new Element<T>(value);
 		}
 		else
 		{
-			Element<T> * temp = head;
-			while (temp->next != nullptr)
-			{
-				temp = temp->next;
-			}
-			temp->next = new Element<T>(value);
-			tail = head->next;
+			Element<T> * temp = tail;
+			tail->next = new Element<T>(value);
+			tail = tail->next;
+			tail->prev = temp;
 		}
 	}
 	void addToHead(const T & value)
 	{
 		if (head == nullptr)
 		{
-			head = new Element<T>(value);
+			head = tail = new Element<T>(value);
 		}
 		else
 		{
 			Element<T> * temp = head;
-			Element<T> * futureHead = new Element<T>(value);
-			head = futureHead;
+			head->prev = new Element<T>(value);
+			head = head->prev;
 			head->next = temp;
 		}
 	}
 	void deleteFromHead()
 	{
 		head = head->next;
+		delete head->prev;
+		head->prev = nullptr;
 	}
 	void deleteFromTail()
 	{
-		Element<T> * temp = head;
-		while (temp->next->next != nullptr)
+		tail = tail->prev;
+		delete head->next;
+		tail->next = nullptr;
+	}
+	void show()
+	{
+		if (head != nullptr)
 		{
-			temp = temp->next;
+			Element<T> * temp = head;
+			while (temp != nullptr)
+			{
+				std::cout << temp->value << std::endl;
+				temp = temp->next;
+			}
 		}
-		temp->next = nullptr;
+	}
+	friend std::ostream & operator << (std::ostream & stream, DoubleLinkedList<T> & list)
+	{
+		if (list.head != nullptr)
+		{
+			Element<T> * temp = list.head;
+			while (temp != nullptr)
+			{
+				stream << temp->value << std::endl;
+				temp = temp->next;
+			}
+		}
+		return stream;
 	}
 	~DoubleLinkedList()
 	{
+		delete head, tail;
 	}
 };
 
