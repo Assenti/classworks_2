@@ -7,5 +7,6 @@ public:
 	~RealFactory();
 	static Client * client();
 	static Client * client_signed_in();
+	static Client * client_signed_out();
 };
 

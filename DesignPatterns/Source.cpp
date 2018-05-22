@@ -20,6 +20,7 @@ int main()
 
 	assert(RealFactory::client_signed_in()->state == Client::Authenticated);
 
+	assert(RealFactory::client_signed_out()->state == Client::Anonymus);
 
 	system("pause");
 	return 0;

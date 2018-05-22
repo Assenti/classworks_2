@@ -22,3 +22,10 @@ Client * RealFactory::client_signed_in()
 	AuthManager::getInstance().sign_in(*c);
 	return c;
 }
+
+Client * RealFactory::client_signed_out()
+{
+	Client * c = client_signed_in();
+	AuthManager::getInstance().sign_out(*c);
+	return c;
+}
