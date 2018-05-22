@@ -1,8 +1,9 @@
 #include <iostream>
+#include <cassert>
 #include <vector>
 #include "CharacterFactory.h"
-
-int main()
+#include "RealFactory.h"
+void factoryInvoke()
 {
 	std::vector<Character *> characters;
 	characters.push_back(CharacterFactory::createCharacter(CharacterFactory::healer));
@@ -12,6 +13,14 @@ int main()
 	{
 		character->message();
 	}
+}
+int main()
+{
+	assert(RealFactory::client()->state == Client::Anonymus);
+
+	assert(RealFactory::client_signed_in()->state == Client::Authenticated);
+
+
 	system("pause");
 	return 0;
 }
