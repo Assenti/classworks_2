@@ -21,9 +21,27 @@
     <ClCompile Include="Passport.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ForeignPassport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassportCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonPassport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Passport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ForeignPassport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassportCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonPassport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

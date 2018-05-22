@@ -115,11 +115,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommonPassport.cpp" />
+    <ClCompile Include="ForeignPassport.cpp" />
     <ClCompile Include="Passport.cpp" />
+    <ClCompile Include="PassportCreator.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommonPassport.h" />
+    <ClInclude Include="ForeignPassport.h" />
     <ClInclude Include="Passport.h" />
+    <ClInclude Include="PassportCreator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
