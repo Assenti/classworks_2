@@ -1,10 +1,7 @@
 #include <iostream>
-#include "Passport.h"
-#include "ForeignPassport.h"
 #include <cassert>
 #include <vector>
 #include "PassportCreator.h"
-
 
 int main()
 {

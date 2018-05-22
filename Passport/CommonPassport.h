@@ -2,6 +2,7 @@
 #include "Passport.h"
 #include <iostream>
 #include <string>
+
 class CommonPassport : public Passport
 {
 public:

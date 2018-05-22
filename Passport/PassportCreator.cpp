@@ -5,7 +5,6 @@ PassportCreator::PassportCreator()
 {
 }
 
-
 PassportCreator::~PassportCreator()
 {
 }
