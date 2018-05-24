@@ -4,6 +4,7 @@
 
 void Player2::move()
 {
+	std::cout << "I am moving here" << std::endl;
 }
 
 Player2::Player2()

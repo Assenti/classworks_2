@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 class Player1
 {
 public:

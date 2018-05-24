@@ -115,10 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="Authentication.cpp" />
     <ClCompile Include="Identity.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="Authentication.h" />
     <ClInclude Include="Identity.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
